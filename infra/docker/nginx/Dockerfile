@@ -19,4 +19,6 @@ COPY ./infra/docker/nginx/*.conf /etc/nginx/conf.d/
 
 COPY ./backend/public /work/backend/public
 
+USER node
+
 WORKDIR /work/backend
