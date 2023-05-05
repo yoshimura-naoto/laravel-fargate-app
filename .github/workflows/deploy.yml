@@ -54,7 +54,7 @@ jobs:
         if: ${{ !steps.cache-npm-ci.outputs.cache-hit }}
       # npm run prod
       - run: |
-          docker-compose exec -T web npm cache clean --force
+          docker-compose exec -T web whoami
           docker-compose exec -T web npm run prod
       # ECRログイン
       - uses: aws-actions/amazon-ecr-login@v1
