@@ -53,7 +53,10 @@ jobs:
       - run: docker-compose exec -T web npm ci
         if: ${{ !steps.cache-npm-ci.outputs.cache-hit }}
       # npm run prod
-      - run: docker-compose exec -T web chown root:root . && npm run prod
+      - name: Npm run prod
+        run: |
+          docker-compose exec -T web chown root:root .
+          docker-compose exec -T web npm run prod
       # ECRログイン
       - uses: aws-actions/amazon-ecr-login@v1
         id: amazon-ecr-login
