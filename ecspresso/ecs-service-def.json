@@ -54,7 +54,7 @@
     },
     {
       "key": "System",
-      "value": "{{ must_env `SYSTEM_NAME }}"
+      "value": "{{ must_env `SYSTEM_NAME` }}"
     },
     {
       "key": "Name",
