@@ -41,7 +41,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "{{ tfstate `data.aws_cloudwatch_log_group.php.repository_url` }}",
+          "awslogs-group": "{{ tfstate `data.aws_cloudwatch_log_group.php.name` }}",
           "awslogs-region": "{{ must_env `AWS_REGION` }}",
           "awslogs-stream-prefix": "ecs"
         }
