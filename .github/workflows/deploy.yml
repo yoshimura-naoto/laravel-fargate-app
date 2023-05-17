@@ -92,9 +92,9 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
       # ecspressoをダウンロード
       - name: Download ecspresso
-        uses: kayac/ecspresso@v0
+        uses: kayac/ecspresso@v2
         with:
-          version: v1.7.13
+          version: v2.1.0
       # ECSにデプロイ
       - name: Deploy to ecs
         run: ecspresso deploy --config config_$ENV_NAME.yaml
