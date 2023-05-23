@@ -105,7 +105,7 @@ jobs:
       - name: Register task definition
         run: ecspresso register --config config_$ENV_NAME.yaml
         working-directory: ./ecspresso
-      # DBマイグレーション実行
+      # DBマイグレーション
       - name: Migrate database
         run: |
           ecspresso run --config config_$ENV_NAME.yaml \
