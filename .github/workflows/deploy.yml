@@ -92,7 +92,7 @@ jobs:
             -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-      # .envファイルをs3にアップロード
+      # .env.prodファイルをs3にアップロード
       - name: Upload env file
         run: aws s3 cp .env.$ENV_NAME s3://naotoyoshimura-$SYSTEM_NAME-$ENV_NAME-$SERVICE_NAME-env-file/$IMAGE_TAG/.env
         working-directory: backend
